@@ -1,0 +1,14 @@
+CREATE TABLE "group" (
+	id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY(),
+	number VARCHAR(10),
+	faculty VARCHAR(100)
+);
+
+CREATE TABLE "student" (
+	id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY(),
+	name VARCHAR(100),
+	sur_name VARCHAR(100),
+	midle_name VARCHAR(100),
+	birthday DATE,
+	group_id BIGINT FOREIGN KEY REFERENCES "group" (id)
+);
